@@ -1,0 +1,63 @@
+/* RESET BÁSICO Y FUENTES */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* PALETA DE HALLOWEEN */
+:root {
+    --color-pumpkin: #ff6a00; /* Naranja Calabaza Vibrante */
+    --color-midnight: #1a1a2e; /* Azul Medianoche Oscuro (Casi Negro) */
+    --color-ghost: #e0e0e0; /* Blanco Hueso para el texto */
+    --color-accent: #8a2be2; /* Morado Bruja para acentos */
+    --color-shadow: #000000;
+}
+
+body {
+    /* Fondo oscuro para ambiente nocturno */
+    background-color: var(--color-midnight); 
+    font-family: 'Arial', sans-serif; /* Puedes cambiar a una fuente espeluznante si la incluyes */
+    line-height: 1.6;
+    color: var(--color-ghost); /* Texto claro sobre fondo oscuro */
+}
+
+/* ESTILOS DEL ENCABEZADO (La noche) */
+header {
+    background-color: var(--color-shadow); /* Negro puro */
+    color: var(--color-ghost);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Borde inferior con acento morado */
+    border-bottom: 3px solid var(--color-accent);
+}
+
+.logo {
+    /* Texto con sombra para que destaque */
+    text-shadow: 2px 2px 4px rgba(255, 106, 0, 0.5); 
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    color: var(--color-ghost);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--color-pumpkin); /* El naranja al pasar el ratón */
+}
+
+/* ESTILOS DE BOTONES BASE */
+.btn-primary, .btn-login {
+    background-color: var
