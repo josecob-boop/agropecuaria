@@ -60,4 +60,104 @@ nav ul li a:hover {
 
 /* ESTILOS DE BOTONES BASE */
 .btn-primary, .btn-login {
-    background-color: var
+    background-color: var(--color-pumpkin); /* Naranja Calabaza */
+    color: var(--color-midnight);
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 1px solid var(--color-accent); /* Borde morado */
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 10px var(--color-pumpkin); /* Sombra de neón naranja */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover, .btn-login:hover {
+    background-color: var(--color-accent); /* Morado al pasar el mouse */
+    color: var(--color-ghost);
+    box-shadow: 0 0 15px var(--color-accent); /* Sombra de neón morada */
+}
+
+/* CONTENIDO PRINCIPAL */
+.home-content {
+    padding: 2rem;
+}
+
+#hero {
+    background: url('https://media.istockphoto.com/id/1172865672/photo/halloween-pumpkin-scarecrow-on-a-wide-field-with-the-moon-on-a-scary-night.jpg?s=612x612&w=0&k=20&c=5T9snigFTavzKZXoodW39qWgqaf8ZyIOhy53yM1XZhY=') no-repeat center center/cover;
+    background-color: #333; /* Color de fallback */
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    /* Sombra interior para darle profundidad */
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7); 
+}
+
+#hero h1 {
+    color: var(--color-pumpkin);
+    font-size: 2.5rem;
+    /* Sombra de texto temblorosa */
+    text-shadow: 1px 1px 0 var(--color-shadow), -1px -1px 0 var(--color-accent);
+}
+
+#hero p {
+    color: var(--color-ghost);
+    margin: 1rem 0;
+}
+
+h2 {
+    color: var(--color-accent);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    /* Línea espeluznante debajo del título */
+    border-bottom: 2px dashed var(--color-pumpkin); 
+    padding-bottom: 10px;
+}
+
+/* TARJETAS DE PRODUCTO */
+.cards-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.producto-card {
+    background-color: #333; /* Fondo más oscuro que el body */
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    /* Sombra que levanta la tarjeta, dándole un aire flotante */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); 
+    transition: transform 0.3s;
+    border-left: 5px solid var(--color-pumpkin);
+}
+
+.producto-card:hover {
+    transform: translateY(-5px); /* Simula que la tarjeta "flota" al pasar el ratón */
+    border-left-color: var(--color-accent);
+}
+
+.producto-card h3 {
+    color: var(--color-pumpkin);
+    margin-bottom: 10px;
+}
+
+.producto-card p {
+    color: var(--color-ghost);
+}
+
+/* ESTILOS DEL PIE DE PÁGINA (Tumba) */
+footer {
+    background-color: var(--color-shadow);
+    color: var(--color-ghost);
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px dashed var(--color-accent); /* Borde que se desvanece */
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--color-pumpkin);
+    text-decoration: none;
+}
