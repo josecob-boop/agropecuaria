@@ -1,123 +1,151 @@
 * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-verdemilitar: #606c38;
+    --color-verdebosque: #283618;
+    --color-blancohueso: #fefae0;
+    --color-doradosuave: #dda15e;
+    --color-terracota: #bc6c25;
+}
+
+body {
+    background: var(--color-verdemilitar);
+    font-family: 'Contrail One', sans-serif; 
+    line-height: 1.6;
+    color: var(--color-blancohueso);
+}
+
+header {
+    background-color: var(--color-verdebosque);
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    padding: 10px 20px;
+    height: 100px;
+}
+
+.logo {
+    margin: 0;
+    z-index: 200;
+}
+
+.logo img {
+    margin-top: 50px;
+    width: 120px; 
+    height: 120px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: var(--color-blancohueso);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    right: 250px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: var(--color-blancohueso);
+    text-decoration: none;
+    padding: 0.9rem 1rem;
+    display: block;
+    transition: color 0.3s;
+}
+
+.btn-login {
+    background-color: var(--color-terracota);
+    border-radius: 100px;
+    font-family: TT Ramillas, sans-serif; 
+}
+
+#hero {
+    background: url('https://static.wixstatic.com/media/1c242f_50a7746eba7944809b98c80179540145~mv2.jpg/v1/fill/w_640,h_342,al_t,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/1c242f_50a7746eba7944809b98c80179540145~mv2.jpg') no-repeat center center/cover;
+    padding: 4rem 2rem;
+    height: 60vh; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin-bottom: 2rem;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 1;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: 2;
+}
+
+.titulo1 {
+    color: var(--color-blancohueso);
+    position: relative;
+    z-index: 5;
+    font-size: 6vw; 
+    align-self: flex-start; /* Alineación a la izquierda */
+}
+
+.titulo2 {
+    color: var(--color-terracota);
+    position: relative;
+    z-index: 5;
+    font-size: 6vw;
+    text-align: right;
+    margin-right: 5rem;
+    align-self: flex-end; 
+}
+
+@media (max-width: 992px) {
+    .titulo1, .titulo2 {
+        font-size: 9vw; /* Aumentar ligeramente el tamaño en tablets */
+        text-align: center;
+        margin-right: 0;
+        align-self: center;
+    }
+    header {
+        height: auto;
+        flex-direction: column;
+    }
+    nav {
+        position: static;
+        transform: none;
+        margin-top: 10px;
+    }
+}
 
 
-        :root {
-
-            --color-verdemilitar: #606c38;
-            --color-verdebosque: #283618;
-            --color-blancohueso: #fefae0;
-            --color-doradosuave: #dda15e;
-            --color-terracota: #bc6c25;
-        }
-
-
-        #hero {
-            background: url('https://static.wixstatic.com/media/1c242f_50a7746eba7944809b98c80179540145~mv2.jpg/v1/fill/w_640,h_342,al_t,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/1c242f_50a7746eba7944809b98c80179540145~mv2.jpg') no-repeat center center/cover;
-            padding: 4rem 2rem;
-            text-align: center;
-            margin-bottom: 2rem;
-            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
-            position: relative;
-            z-index: 1;
-        }
-        
-        #hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4); 
-            z-index: 2;
-        }
-
-        body {
-            background: var(--color-verdemilitar);
-            font-family: 'Contrail One', sans-serif;
-            Line-height: 1.6;
-            color: var(--color-blancohueso);
-        }
-
-        header {
-            background-color: var(--color-verdebosque);
-            display: block; 
-            position: relative;
-            z-index: 100;
-            padding: 10px 20px 10px 20px;
-            height: 100px;
-        }
-
-
-        .logo {
-            position: absolute;
-            left: 23%;
-            transform: translateX(-50%);
-            margin: 0;
-            font-size: 1.6rem;
-            font-weight: bold;
-            z-index: 200;
-        }
-
-        .logo img {
-            margin-top: 20px;
-            width: 150px;
-            height: auto;
-            padding: 10px;
-            border-radius: 50%;
-            background-color: var(--color-blancohueso);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-            position: absolute;
-            right: 250px;
-
-        }
-
-        nav {
-            position: absolute;
-            top: 50%;
-            right: 20px;
-            transform: translateY(-50%);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li a {
-            color: var(--color-blancohueso);
-            text-decoration: none;
-            padding: 0.9rem 1rem;
-            display: block;
-            transition: color 0.3s;
-
-        }
-
-        .btn-login {
-            background-color: var(--color-terracota);
-            border-radius: 100px;
-            font-family: TT Ramillas;
-        }
-
-        .titulo1 {
-            color: var(--color-blancohueso);
-            position: relative;
-            z-index: 5;
-            font-size: 110px;
-        }
-
-        .titulo2 {
-            color: var(--color-terracota);
-            text-align: right; 
-            margin-right: 5rem;
-            position: relative;
-            z-index: 5;
-            font-size: 110px;
-        }
+@media (max-width: 576px) {
+    .titulo1, .titulo2 {
+        font-size: 10vw; 
+        text-align: center;
+        margin-right: 0;
+        align-self: center;
+    }
+    
+    nav {
+        display: none; 
+    }
+    
+    .logo {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+}
