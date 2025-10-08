@@ -97,23 +97,26 @@ nav ul li a {
     color: var(--color-blancohueso);
     position: relative;
     z-index: 5;
-    font-size: 6vw; 
-    align-self: flex-start; /* Alineación a la izquierda */
+    font-size: 4vw; 
+    align-self: flex-start; 
+    margin-left: 350px;
 }
 
 .titulo2 {
     color: var(--color-terracota);
     position: relative;
     z-index: 5;
-    font-size: 6vw;
+    font-size: 4vw;
     text-align: right;
     margin-right: 5rem;
     align-self: flex-end; 
+    margin-right: 250px;
+
 }
 
 @media (max-width: 992px) {
     .titulo1, .titulo2 {
-        font-size: 9vw; /* Aumentar ligeramente el tamaño en tablets */
+        font-size: 9vw; 
         text-align: center;
         margin-right: 0;
         align-self: center;
