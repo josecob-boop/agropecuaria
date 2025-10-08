@@ -20,7 +20,7 @@ body {
 }
 
 header {
-    background-color: var(--color-verdebosque);
+    background-color: var(--color-verdemilitar);
     display: flex; 
     justify-content: space-between; 
     align-items: center;
@@ -60,23 +60,25 @@ nav ul li a {
     padding: 0.9rem 1rem;
     display: block;
     transition: color 0.3s;
+    font-size: 20px;
 }
 
 .btn-login {
     background-color: var(--color-terracota);
-    border-radius: 100px;
+    border-radius: 150px;
     font-family: TT Ramillas, sans-serif; 
+    width: 9rem;
+    text-align: center;
 }
 
 #hero {
     background: url('https://static.wixstatic.com/media/1c242f_50a7746eba7944809b98c80179540145~mv2.jpg/v1/fill/w_640,h_342,al_t,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/1c242f_50a7746eba7944809b98c80179540145~mv2.jpg') no-repeat center center/cover;
     padding: 4rem 2rem;
-    height: 60vh; 
+    height: 30vh; 
     display: flex; 
     flex-direction: column;
     justify-content: center;
     text-align: left;
-    margin-bottom: 2rem;
     box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
     position: relative;
     z-index: 1;
@@ -97,7 +99,7 @@ nav ul li a {
     color: var(--color-blancohueso);
     position: relative;
     z-index: 5;
-    font-size: 4vw; 
+    font-size: 5vw; 
     align-self: flex-start; 
     margin-left: 350px;
 }
@@ -106,49 +108,21 @@ nav ul li a {
     color: var(--color-terracota);
     position: relative;
     z-index: 5;
-    font-size: 4vw;
+    font-size: 5vw;
     text-align: right;
     margin-right: 5rem;
     align-self: flex-end; 
     margin-right: 250px;
-
 }
 
-@media (max-width: 992px) {
-    .titulo1, .titulo2 {
-        font-size: 9vw; 
-        text-align: center;
-        margin-right: 0;
-        align-self: center;
-    }
-    header {
-        height: auto;
-        flex-direction: column;
-    }
-    nav {
-        position: static;
-        transform: none;
-        margin-top: 10px;
-    }
-}
-
-
-@media (max-width: 576px) {
-    .titulo1, .titulo2 {
-        font-size: 10vw; 
-        text-align: center;
-        margin-right: 0;
-        align-self: center;
+    
+    #productos-destacados {
+    background-color: var(--color-blancohueso);
+    color: var(--color-verdebosque); 
+    padding: 2rem 0; 
     }
     
-    nav {
-        display: none; 
-    }
+    #productos-destacados p {
+    color: var(--color-verdemilitar); 
     
-    .logo {
-        width: 100%;
-        text-align: center;
-        display: flex;
-        justify-content: center;
     }
-}
