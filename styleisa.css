@@ -95,6 +95,10 @@ nav ul li a {
     z-index: 2;
 }
 
+.featured-products{
+display: flex;
+}
+
 .titulo1 {
     color: var(--color-blancohueso);
     position: relative;
@@ -115,6 +119,12 @@ nav ul li a {
     margin-right: 250px;
 }
 
+ .product-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
     
     #productos-destacados {
     background-color: var(--color-blancohueso);
@@ -124,5 +134,10 @@ nav ul li a {
     
     #productos-destacados p {
     color: var(--color-verdemilitar); 
-    
     }
+.product-grid{
+            padding: 50px 0;
+            text-align: center;
+              display: flex;
+  justify-content: space-between;
+        }
