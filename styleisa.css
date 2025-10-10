@@ -141,3 +141,43 @@ display: flex;
               display: flex;
   justify-content: space-between;
         }
+
+ /* -----------------------------------------------Division de pantalla--------------------------*/
+ 
+ @media (max-width: 992px) {
+    .titulo1, .titulo2 {
+        font-size: 9vw; 
+        text-align: center;
+        margin-right: 0;
+        align-self: center;
+    }
+    header {
+        height: auto;
+        flex-direction: column;
+    }
+    nav {
+        position: static;
+        transform: none;
+        margin-top: 10px;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .titulo1, .titulo2 {
+        font-size: 10vw; 
+        text-align: center;
+        margin-right: 0;
+        align-self: center;
+    }
+    
+    nav {
+        display: none; 
+    }
+    
+    .logo {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+}
