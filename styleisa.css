@@ -226,19 +226,26 @@ display: flex;
     font-size: 1.2rem;
 }
 
-footer{
-    background-color: var(--color-terracota);
-    text-align: center;
-    padding: 15px 0; 
-    
-}
-
-footer p {
-    margin: 0; /* Elimina cualquier margen residual */
-    padding: 0;
-    color: var(--color-blancohueso);
-    font-size: 1rem;
-}
+        footer {
+            /* 🟢 SOLUCIÓN 1: El fondo Terracota Ocupa TODO el ancho */
+            background-color: var(--color-terracota); 
+            
+            /* 🟢 SOLUCIÓN 2: Corrección de sintaxis y centrado del contenido */
+            text-align: center; 
+            padding: 15px 0; /* Espacio interno */
+            width: 100%; /* Aseguramos el 100% */
+        }
+        
+        .centered-footer-text {
+            color: var(--color-verdebosque); /* Cambiamos el color a uno que contraste con terracota */
+            margin: 0 auto; /* Ayuda a centrar si el texto fuera un bloque */
+            width: auto;
+            max-width: 1200px;
+        }
+        
+        footer a {
+            color: var(--color-verdebosque);
+        }
 
 
  /* -----------------------------------------------Division de pantalla--------------------------*/
