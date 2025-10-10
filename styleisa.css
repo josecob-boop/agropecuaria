@@ -110,6 +110,8 @@ nav ul li a {
     background-position: center 15%; 
 }
 
+
+
 .featured-products{
 display: flex;
 }
@@ -136,7 +138,7 @@ display: flex;
     font-size: 5vw;
     text-align: right;
     align-self: flex-end; 
-    margin-right: 5rem;
+    margin-right: 12rem;
     margin-bottom: 3rem;
     margin-top: 0;
     line-height: 0.5;
@@ -152,8 +154,9 @@ display: flex;
 #productos-destacados p {
     color: var(--color-verdemilitar);
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 20px;
+    padding-top: 0;
 }
 
 #productos-destacados h2 {
@@ -186,6 +189,7 @@ display: flex;
     gap: 20px;
     max-width: 1200px; /* Ancho máximo para el grid */
     margin: 0 auto; /* Centrar el grid */
+    
 }
 
 .product-item {
@@ -197,6 +201,8 @@ display: flex;
     min-width: 250px;
     /* 🎯 ALTURA FIJA para uniformizar todos los contenedores */
     height: 200px; 
+    
+    
 }
 
 .product-item img {
@@ -218,6 +224,11 @@ display: flex;
     padding: 10px;
     text-align: center;
     font-size: 1.2rem;
+}
+
+footer{
+    background-color: var(--color-terracota);
+    text-align: center);
 }
 
 
