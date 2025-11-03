@@ -1,0 +1,85 @@
+.login-page {
+    /* Forzar que la sección ocupe casi toda la altura visible */
+    height: 70vh; 
+    
+    /* Usar Flexbox para centrar el formulario en el medio de la vista */
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; /* Centrado vertical */
+    align-items: center; /* Centrado horizontal */
+    
+    /* El fondo blanco hueso que usaste para #productos-destacados */
+    background-color: var(--color-blancohueso);
+    padding: 30px;
+}
+
+.login-container {
+    max-width: 400px;
+    width: 90%;
+    padding: 30px;
+    
+    /* Fondo para el formulario: Blanco hueso más oscuro o color de acento */
+    background: var(--color-blancohueso);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); /* Sombra para resaltar la caja */
+    
+    /* Texto en verde oscuro para contraste */
+    color: var(--color-verdebosque); 
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 25px;
+    color: var(--color-terracota); /* Título en terracota */
+    font-size: 2rem;
+}
+
+/* === ESTILOS DEL FORMULARIO Y CAMPOS === */
+
+.login-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--color-verdemilitar); /* Texto de label en verde militar */
+    font-size: 1.1rem;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--color-verdemilitar); /* Borde con color temático */
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: white;
+}
+
+/* === ESTILO DEL BOTÓN DE ACCESO === */
+
+.btn-acceder {
+    /* Usamos el color de acento (Terracota) para el botón */
+    background-color: var(--color-terracota);
+    color: var(--color-blancohueso);
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-acceder:hover {
+    background-color: #a0571f; /* Terracota más oscuro al pasar el mouse */
+}
+
+/* Estilo para el enlace de registro opcional */
+.login-page a {
+    color: var(--color-terracota);
+    text-decoration: none;
+    margin-top: 15px;
+    display: inline-block;
+}
