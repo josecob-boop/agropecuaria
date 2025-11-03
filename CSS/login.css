@@ -3,11 +3,12 @@
 .login-page {
     /* Forzar que la sección ocupe casi toda la altura visible */
     height: 70vh; 
+    
     /* Usar Flexbox para centrar el formulario en el medio de la vista */
     display: flex; 
     flex-direction: column;
     justify-content: center; /* Centrado vertical */
-    align-items: center; /* Centrado horizontal *
+    align-items: center; /* Centrado horizontal */
     
     /* El fondo blanco hueso que usaste para #productos-destacados */
     background-color: var(--color-blancohueso);
