@@ -3,7 +3,6 @@
 .login-page {
     /* Forzar que la sección ocupe casi toda la altura visible */
     height: 70vh; 
-    background: var(--color-verdebosque);
     /* Usar Flexbox para centrar el formulario en el medio de la vista */
     display: flex; 
     flex-direction: column;
