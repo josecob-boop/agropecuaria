@@ -1,36 +1,49 @@
+/* === ESTILOS ESPECÍFICOS PARA LA PÁGINA DE LOGIN (main) === */
+
 .login-page {
-    /* Forzar que la sección ocupe casi toda la altura visible */
-    height: 70vh; 
+    /* Fondo de imagen de login */
+    background: url('https://images.pexels.com/photos/1018449/pexels-photo-1018449.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
     
-    /* Usar Flexbox para centrar el formulario en el medio de la vista */
-    display: flex; 
+    /* Configuración de Altura y Centrado del Contenedor */
+    height: 90vh; 
+    display: flex;
     flex-direction: column;
-    justify-content: center; /* Centrado vertical */
-    align-items: center; /* Centrado horizontal */
-    
-    /* El fondo blanco hueso que usaste para #productos-destacados */
-    background-color: var(--color-blancohueso);
+    justify-content: center;
+    align-items: center;
     padding: 30px;
+    position: relative;
+    z-index: 1; 
+}
+
+/* Overlay para oscurecer la imagen de fondo */
+.login-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(40, 54, 24, 0.75); /* Verde bosque con opacidad */
+    z-index: 2;
 }
 
 .login-container {
     max-width: 400px;
     width: 90%;
     padding: 30px;
-    
-    /* Fondo para el formulario: Blanco hueso más oscuro o color de acento */
     background: var(--color-blancohueso);
     border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); /* Sombra para resaltar la caja */
-    
-    /* Texto en verde oscuro para contraste */
-    color: var(--color-verdebosque); 
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.6);
+    color: var(--color-verdebosque);
     text-align: center;
+    
+    /* Elevar el contenedor por encima del overlay */
+    z-index: 3; 
 }
 
 .login-container h2 {
     margin-bottom: 25px;
-    color: var(--color-terracota); /* Título en terracota */
+    color: var(--color-terracota);
     font-size: 2rem;
 }
 
@@ -41,7 +54,7 @@
     text-align: left;
     margin-bottom: 5px;
     font-weight: bold;
-    color: var(--color-verdemilitar); /* Texto de label en verde militar */
+    color: var(--color-verdemilitar);
     font-size: 1.1rem;
 }
 
@@ -50,7 +63,7 @@
     width: 100%;
     padding: 12px;
     margin-bottom: 20px;
-    border: 1px solid var(--color-verdemilitar); /* Borde con color temático */
+    border: 1px solid var(--color-verdemilitar);
     border-radius: 5px;
     font-size: 1rem;
     background-color: white;
@@ -59,7 +72,6 @@
 /* === ESTILO DEL BOTÓN DE ACCESO === */
 
 .btn-acceder {
-    /* Usamos el color de acento (Terracota) para el botón */
     background-color: var(--color-terracota);
     color: var(--color-blancohueso);
     padding: 12px 20px;
@@ -73,7 +85,7 @@
 }
 
 .btn-acceder:hover {
-    background-color: #a0571f; /* Terracota más oscuro al pasar el mouse */
+    background-color: #a0571f;
 }
 
 /* Estilo para el enlace de registro opcional */
