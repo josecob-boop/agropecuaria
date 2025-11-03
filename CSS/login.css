@@ -1,3 +1,35 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-verdemilitar: #606c38;
+    --color-verdebosque: #283618;
+    --color-blancohueso: #fefae0;
+    --color-doradosuave: #dda15e;
+    --color-terracota: #bc6c25;
+}
+
+body {
+    background: var(--color-verdemilitar);
+    font-family: 'Contrail One', sans-serif; 
+    line-height: 1.6;
+    color: var(--color-blancohueso);
+}
+
+header {
+    background-color: var(--color-verdemilitar);
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    padding: 10px 20px;
+    height: 100px;
+}
+
 /* === ESTILOS ESPECÍFICOS PARA LA PÁGINA DE LOGIN (main) === */
 
 .login-page {
