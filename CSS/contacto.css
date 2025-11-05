@@ -1,0 +1,87 @@
+/* === ESTILOS PARA LA PÁGINA DE CONTACTO (contacto.html) === */
+
+.main-contacto {
+    /* Fondo claro de tu tema para buena legibilidad */
+    background-color: var(--color-blancohueso);
+    color: var(--color-verdebosque); /* Texto principal en verde oscuro */
+    padding: 60px 40px;
+    
+    /* Centrar la página de contacto y darle un ancho legible */
+    max-width: 1000px; 
+    margin: 0 auto; 
+    border-radius: 8px; /* Opcional: para darle un toque suave si el body es verde militar */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.contacto-info h1 {
+    color: var(--color-verdebosque);
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+/* Estilo general del párrafo */
+.contacto-info p {
+    color: var(--color-verdemilitar);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Destacar los bloques de información de contacto */
+.datos-contacto {
+    margin-top: 25px;
+    margin-bottom: 30px;
+    border-left: 4px solid var(--color-terracota); /* Línea de acento terracota */
+    padding-left: 15px;
+}
+
+.datos-contacto h2 {
+    color: var(--color-terracota);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.datos-contacto p {
+    color: var(--color-verdebosque);
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.datos-contacto strong {
+    font-weight: bold;
+}
+
+/* === ESTILOS PARA EL FORMULARIO EMBEDDED === */
+
+.separator {
+    margin: 40px 0;
+    border: 0;
+    border-top: 2px solid var(--color-doradosuave); /* Línea divisoria en color de acento */
+}
+
+.contacto-form-embed h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--color-verdebosque);
+}
+
+.form-wrapper {
+    /* El contenedor del IFRAME debe estar centrado */
+    display: block;
+    margin: 0 auto;
+    
+    /* Establecer un ancho máximo para el formulario incrustado */
+    max-width: 650px; 
+    
+    /* Estilos visuales para el contenedor del formulario */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Asegurar que el IFRAME sea responsivo dentro de su wrapper */
+.form-wrapper iframe {
+    display: block;
+    width: 100%;
+    /* La altura de 600px la mantienes en el HTML para control */
+}
