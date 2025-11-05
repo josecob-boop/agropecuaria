@@ -1,4 +1,11 @@
 /* === ESTILOS PARA LA PÁGINA DE CONTACTO (contacto.html) === */
+:root {
+    --color-verdemilitar: #606c38;
+    --color-verdebosque: #283618;
+    --color-blancohueso: #fefae0;
+    --color-doradosuave: #dda15e;
+    --color-terracota: #bc6c25;
+}
 
 .main-contacto {
     /* Fondo claro de tu tema para buena legibilidad */
