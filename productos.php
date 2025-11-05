@@ -10,6 +10,15 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+// 🟢 VERIFICAR ROL: Asegura que solo el rol 'administrador' o 'vendedor' tenga acceso
+$allowed_roles = ['administrador', 'vendedor'];
+if (!isset($_SESSION['user_rol']) || !in_array($_SESSION['user_rol'], $allowed_roles)) {
+    // Si no tiene el rol correcto, redirigir a una página de error o al dashboard
+    header("Location: dashboard.php"); // Redirigir a una página accesible
+    exit;
+}
+// ----------------------------------------------------
+
 // 1. OBTENER DATOS DE LA BASE DE DATOS
 try {
     // Consulta para obtener todos los productos y el nombre del proveedor (JOIN simple)
