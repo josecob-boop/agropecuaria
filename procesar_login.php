@@ -9,6 +9,7 @@ require 'db_connect.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // 3. Obtener y limpiar los datos del formulario
+    // Aquí puedes añadir filter_input para mayor claridad, aunque el prepared statement es la clave
     $email = $_POST['username'] ?? ''; 
     $password = $_POST['password'] ?? ''; 
 
@@ -21,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         // 4. Preparar la consulta SQL para obtener el usuario por email
-        // Usamos prepared statements para prevenir inyección SQL
         $stmt = $pdo->prepare("SELECT id, nombre, password, rol FROM usuarios WHERE email = :email");
         $stmt->bindParam(':email', $email);
         $stmt->execute();
@@ -35,10 +35,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // 7. Login exitoso: Registrar variables de sesión
             $_SESSION['user_id'] = $usuario['id'];
             $_SESSION['user_name'] = $usuario['nombre'];
-            $_SESSION['user_rol'] = $usuario['rol']; // Importante para control de acceso
+            $_SESSION['user_rol'] = $usuario['rol'];
 
-            // Redirigir al dashboard
-            header("Location: dashboard.html");
+            // 🟢 AJUSTE: Redirigir al archivo PHP seguro
+            header("Location: dashboard.php"); 
             exit;
 
         } else {
@@ -49,8 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
     } catch (PDOException $e) {
-        // Manejo de errores de base de datos (solo para desarrollo)
-        $_SESSION['error'] = "Error del sistema: " . $e->getMessage();
+        // Manejo de errores de base de datos
+        $_SESSION['error'] = "Error del sistema. Inténtalo más tarde."; // Mensaje genérico para el usuario
         header("Location: login.html");
         exit;
     }
