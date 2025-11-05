@@ -6,7 +6,7 @@
     <section id="inventario-view">
         <h1>Inventario de Productos 🌾</h1>
         
-        <a href="producto_form.html" class="btn-primary">➕ Nuevo Producto</a>
+        <a href="producto_form.php" class="btn-primary">➕ Nuevo Producto</a>
 
         <?php if (!empty($productos)): ?>
         <table class="data-table">
@@ -31,7 +31,7 @@
                     <td>$<?php echo number_format($producto['precio_venta'], 2); ?></td>
                     <td><?php echo htmlspecialchars($producto['nombre_proveedor'] ?? 'N/A'); ?></td>
                     <td>
-                        <a href="producto_form.html?id=<?php echo $producto['id']; ?>" class="btn-secondary">✏️ Editar</a>
+                        <a href="producto_form.php?id=<?php echo $producto['id']; ?>" class="btn-secondary">✏️ Editar</a>
                         
                         <form method="POST" action="procesar_producto.php" style="display:inline;" onsubmit="return confirm('¿Seguro que desea eliminar este producto?');">
                             <input type="hidden" name="action" value="delete">
