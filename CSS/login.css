@@ -1,3 +1,4 @@
+/* === 0. GLOBALES Y VARIABLES === */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,25 +6,81 @@
 }
 
 :root {
-    --color-verdemilitar: #606c38;
-    --color-verdebosque: #283618;
-    --color-blancohueso: #fefae0;
-    --color-doradosuave: #dda15e;
-    --color-terracota: #bc6c25;
+    --color-verdemilitar: #606c38; /* Verde Oscuro/Militar */
+    --color-verdebosque: #283618; /* Verde Muy Oscuro/Bosque */
+    --color-blancohueso: #fefae0; /* Fondo Principal (Cremoso) */
+    --color-doradosuave: #dda15e; /* Dorado/Acento Suave */
+    --color-terracota: #bc6c25; /* Terracota/Naranja (Acento Fuerte) */
 }
 
+body {
+    background: var(--color-verdemilitar);
+    font-family: 'Contrail One', sans-serif;
+    line-height: 1.6;
+    color: var(--color-blancohueso);
+}
+
+/* === 1. HEADER Y NAVEGACIÓN === */
+header {
+    background-color: var(--color-verdemilitar);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    padding: 10px 20px;
+    height: 100px;
+}
+
+.logo img {
+    /* Eliminamos márgenes fijos como margin-top: 50px */
+    width: 80px; 
+    height: 80px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: var(--color-blancohueso);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: var(--color-blancohueso);
+    text-decoration: none;
+    padding: 0.9rem 1rem;
+    display: block;
+    transition: color 0.3s;
+    font-size: 20px;
+}
+
+.btn-login {
+    background-color: var(--color-terracota);
+    border-radius: 150px;
+    padding: 0.8rem 1.5rem !important; /* Ajuste para el botón */
+    text-align: center;
+}
+
+/* === 2. SECCIÓN HERO (INDEX) === */
 #hero {
     background: url('https://galvintech.com/wp-content/uploads/2020/01/photo-of-green-field-near-mountains-974314.jpg') no-repeat center center/cover;
-    padding: 4rem 2rem;
-    height: 25vh; 
-    display: flex; 
+    height: 35vh; 
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: left;
+    align-items: center; /* Centrado del texto */
     box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
     position: relative;
     z-index: 1;
     margin: 0;
+    /* Ajuste de centrado de imagen para mostrar el horizonte */
+    background-position: center 35%; 
 }
 
 #hero::before {
@@ -33,38 +90,31 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); 
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: 2;
 }
 
-body {
-    background: var(--color-verdemilitar);
-    font-family: 'Contrail One', sans-serif; 
-    line-height: 1.6;
-    color: var(--color-blancohueso);
-}
-
-header {
-    background-color: var(--color-verdemilitar);
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center;
+.titulo1, .titulo2 {
     position: relative;
-    z-index: 100;
-    padding: 10px 20px;
-    height: 100px;
+    z-index: 5;
+    font-size: 3.5rem; 
+    text-align: center;
+    margin: 0; 
+    padding: 0; 
+    line-height: 0.9;
 }
 
-/* === ESTILOS ESPECÍFICOS PARA LA PÁGINA DE LOGIN (main) === */
+.titulo2 {
+    color: var(--color-terracota);
+}
 
-/* === ESTILOS ESPECÍFICOS PARA LA PÁGINA DE LOGIN (main) === */
-
+/* === 3. SECCIÓN LOGIN (login.html) === */
 .login-page {
-    /* Fondo de imagen de login */
+    /* 🟢 Fondo de imagen de login */
     background: url('https://images.pexels.com/photos/2165688/pexels-photo-2165688.jpeg') no-repeat center center/cover;
     
-    /* Configuración de Altura y Centrado del Contenedor */
-    height: 90vh; 
+    /* Configuración de Altura y Centrado */
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -74,7 +124,7 @@ header {
     z-index: 1; 
 }
 
-/* Overlay para oscurecer la imagen de fondo */
+/* 🟢 Overlay para oscurecer la imagen de fondo */
 .login-page::before {
     content: '';
     position: absolute;
@@ -106,8 +156,6 @@ header {
     font-size: 2rem;
 }
 
-/* === ESTILOS DEL FORMULARIO Y CAMPOS === */
-
 .login-form label {
     display: block;
     text-align: left;
@@ -128,29 +176,10 @@ header {
     background-color: white;
 }
 
-/* === ESTILO DEL BOTÓN DE ACCESO === */
-
 .btn-acceder {
     background-color: var(--color-terracota);
     color: var(--color-blancohueso);
     padding: 12px 20px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    width: 100%;
-    margin-top: 10px;
-    transition: background-color 0.3s;
-}
-
-.btn-acceder:hover {
-    background-color: #a0571f;
-}
-
-/* Estilo para el enlace de registro opcional */
-.login-page a {
-    color: var(--color-terracota);
-    text-decoration: none;
-    margin-top: 15px;
-    display: inline-block;
-}
+    border-radius:
