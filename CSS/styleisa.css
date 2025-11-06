@@ -1,9 +1,17 @@
+/*
+============================================================
+AGROPECUARIA - ESTILOS CONSOLIDADOS (styleisa.css)
+============================================================
+*/
+
+/* === 0. RESET Y VARIABLES GLOBALES === */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Paleta de Colores Temáticos */
 :root {
     --color-verdemilitar: #606c38;
     --color-verdebosque: #283618;
@@ -14,15 +22,16 @@
 
 body {
     background: var(--color-verdemilitar);
-    font-family: 'Contrail One', sans-serif; 
+    font-family: 'Contrail One', sans-serif;
     line-height: 1.6;
     color: var(--color-blancohueso);
 }
 
+/* === 1. HEADER Y NAVEGACIÓN === */
 header {
     background-color: var(--color-verdemilitar);
-    display: flex; 
-    justify-content: space-between; 
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     position: relative;
     z-index: 100;
@@ -30,26 +39,20 @@ header {
     height: 100px;
 }
 
-.logo {
-    margin: 0;
-    z-index: 200;
-}
-
 .logo img {
-    margin-top: 50px;
-    width: 120px; 
-    height: 120px;
+    width: 80px; 
+    height: 80px;
     padding: 5px;
     border-radius: 50%;
     background-color: var(--color-blancohueso);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-    right: 250px;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     align-items: center;
+    gap: 15px;
     margin: 0;
     padding: 0;
 }
@@ -66,23 +69,43 @@ nav ul li a {
 .btn-login {
     background-color: var(--color-terracota);
     border-radius: 150px;
-    font-family: TT Ramillas, sans-serif; 
-    width: 9rem;
+    padding: 0.8rem 1.5rem !important;
     text-align: center;
 }
 
+/* Estilos comunes a botones y enlaces internos */
+.btn-primary, .btn-secondary, .btn-danger {
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 0.95rem;
+    border: none;
+    display: inline-block;
+}
+.btn-primary { background-color: var(--color-terracota); color: white; }
+.btn-secondary { background-color: #ccc; color: #333; }
+.btn-danger { background-color: #c0392b; color: white; }
+
+.btn-primary:hover { background-color: #a0571f; }
+.btn-secondary:hover { background-color: #bbb; }
+.btn-danger:hover { background-color: #a5281a; }
+
+/* === 2. SECCIÓN HERO (INDEX) === */
 #hero {
     background: url('https://galvintech.com/wp-content/uploads/2020/01/photo-of-green-field-near-mountains-974314.jpg') no-repeat center center/cover;
-    padding: 4rem 2rem;
-    height: 25vh; 
-    display: flex; 
+    height: 35vh; 
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: left;
+    align-items: center; 
     box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
     position: relative;
     z-index: 1;
     margin: 0;
+    background-position: center 35%; 
 }
 
 #hero::before {
@@ -92,58 +115,25 @@ nav ul li a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); 
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: 2;
 }
 
-#hero {
-    /* ... otras propiedades ... */
-    
-    /* 🟢 Estas propiedades fuerzan el centrado de la imagen y que cubra todo */
-    background-position: center center; /* Ya lo tienes, es crucial */
-    background-repeat: no-repeat;
-    background-size: cover; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centrado vertical */
-    align-items: center; /* Centrado horizontal del texto */
-    background-position: center 15%; 
-}
-
-
-
-.featured-products{
-display: flex;
-}
-
 .titulo1, .titulo2 {
-    margin-top: 0; 
-    margin-bottom: 0; 
-}
-
-.titulo1 {
-    color: var(--color-blancohueso);
     position: relative;
     z-index: 5;
-    font-size: 5vw; 
-    align-self: flex-start; 
-    margin-left: 350px;
-    margin-bottom: 0;   
+    font-size: 3.5rem; 
+    text-align: center;
+    margin: 0; 
+    padding: 0; 
+    line-height: 0.9;
 }
 
 .titulo2 {
     color: var(--color-terracota);
-    position: relative;
-    z-index: 5;
-    font-size: 5vw;
-    text-align: right;
-    align-self: flex-end; 
-    margin-right: 12rem;
-    margin-bottom: 3rem;
-    margin-top: 0;
-    line-height: 0.5;
 }
 
+/* === 3. PRODUCTOS DESTACADOS (INDEX) === */
 #productos-destacados {
     background-color: var(--color-blancohueso);
     color: var(--color-verdebosque);
@@ -153,65 +143,55 @@ display: flex;
 
 #productos-destacados p {
     color: var(--color-verdemilitar);
-    text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 20px;
-    padding-top: 0;
 }
 
 #productos-destacados h2 {
-    color: var(--color-verdebosque); /* Ajustado a verdemilitar para el color del texto */
-    text-align: center;
+    color: var(--color-verdebosque);
     font-size: 2rem;
-    margin: 0px auto; /* Centrar el bloque y darle margen */
-    display: flex; /* 👈 Habilitar Flexbox */
-    align-items: center; /* Alinear verticalmente el texto y las líneas */
-    justify-content: center; /* Centrar el contenido horizontalmente */
-    width: 100%; /* Controlar el ancho total del título y las líneas */
-    max-width: 2000px;
+    margin: 30px auto; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    max-width: 900px;
 }
 
 #productos-destacados h2::before,
 #productos-destacados h2::after {
-    content: ''; 
-    flex-grow: 1; 
-    height: 2px; 
-    /* 🟢 ¡CAMBIAR AQUÍ! Usamos un color que contrasta con el fondo blanco-hueso */
-    background-color: var(--color-verdebosque); 
-    margin: 0 15px; 
+    content: '';
+    flex-grow: 1;
+    height: 2px;
+    background-color: var(--color-verdebosque);
+    margin: 0 15px;
 }
 
+/* Estilos para el efecto diagonal */
 .product-grid {
     padding: 50px 0;
-    text-align: center;
     display: flex;
     justify-content: space-around;
-    gap: 20px;
-    max-width: 1200px; /* Ancho máximo para el grid */
-    margin: 0 auto; /* Centrar el grid */
-    
+    max-width: 1200px; 
+    margin: 0 auto;
+    /* Si estás usando la versión diagonal y solapada, usa las reglas de compensación aquí */
 }
 
 .product-item {
     position: relative;
     overflow: hidden;
-    border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    flex: 1; 
+    flex: 1;
     min-width: 250px;
-    /* 🎯 ALTURA FIJA para uniformizar todos los contenedores */
-    height: 200px; 
-    
-    
+    height: 200px;
+    /* Si usas clip-path: clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%); */
 }
 
 .product-item img {
     width: 100%;
-    height: 100%; 
-    display: block;
-    /* 🔥 SOLUCIÓN para centrar y uniformizar */
-    object-fit: cover; 
-    object-position: center; 
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .product-overlay {
@@ -226,64 +206,227 @@ display: flex;
     font-size: 1.2rem;
 }
 
-        footer {
-            /* 🟢 SOLUCIÓN 1: El fondo Terracota Ocupa TODO el ancho */
-            background-color: var(--color-terracota); 
-            
-            /* 🟢 SOLUCIÓN 2: Corrección de sintaxis y centrado del contenido */
-            text-align: center; 
-            padding: 15px 0; /* Espacio interno */
-            width: 100%; /* Aseguramos el 100% */
-        }
-        
-        .centered-footer-text {
-            color: var(--color-verdebosque); /* Cambiamos el color a uno que contraste con terracota */
-            margin: 0 auto; /* Ayuda a centrar si el texto fuera un bloque */
-            width: auto;
-            max-width: 1200px;
-        }
-        
-        footer a {
-            color: var(--color-verdebosque);
-        }
 
+/* === 4. SECCIÓN LOGIN (login.html) === */
+.login-page {
+    background: url('https://images.pexels.com/photos/2165688/pexels-photo-2165688.jpeg') no-repeat center center/cover;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+    z-index: 1; 
+}
 
- /* -----------------------------------------------Division de pantalla--------------------------*/
- 
- @media (max-width: 992px) {
-    .titulo1, .titulo2 {
-        font-size: 9vw; 
-        text-align: center;
-        margin-right: 0;
-        align-self: center;
-    }
-    header {
-        height: auto;
-        flex-direction: column;
-    }
-    nav {
-        position: static;
-        transform: none;
-        margin-top: 10px;
-    }
+.login-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(40, 54, 24, 0.75);
+    z-index: 2;
+}
+
+.login-container {
+    max-width: 400px;
+    padding: 30px;
+    background: var(--color-blancohueso);
+    border-radius: 10px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.6);
+    color: var(--color-verdebosque);
+    z-index: 3; 
+}
+
+.login-container h2 { color: var(--color-terracota); margin-bottom: 25px; }
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%; padding: 12px; margin-bottom: 20px;
+    border: 1px solid var(--color-verdemilitar); border-radius: 5px;
+}
+
+.btn-acceder {
+    background-color: var(--color-terracota); color: var(--color-blancohueso);
+    padding: 12px 20px; border-radius: 5px; width: 100%;
 }
 
 
-@media (max-width: 576px) {
+/* === 5. SECCIÓN CONTACTO (contacto.html) === */
+.main-contacto {
+    background-color: var(--color-blancohueso);
+    color: var(--color-verdebosque);
+    padding: 60px 40px;
+    max-width: 1000px; 
+    margin: 0 auto; 
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.datos-contacto {
+    margin-top: 25px;
+    border-left: 4px solid var(--color-terracota);
+    padding-left: 15px;
+}
+
+.datos-contacto h2 { color: var(--color-terracota); }
+
+.link-ticket { color: var(--color-terracota); text-decoration: underline; }
+
+.form-wrapper {
+    display: block;
+    margin: 0 auto;
+    max-width: 650px; 
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* === 6. ESTILOS DEL DASHBOARD E INTERFACES DE GESTIÓN (.php) === */
+.dashboard-content {
+    background-color: var(--color-blancohueso);
+    color: var(--color-verdebosque);
+    padding: 40px 20px;
+    min-height: 85vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.dashboard-content h1 { color: var(--color-verdebosque); }
+.dashboard-content p { color: var(--color-verdemilitar); }
+
+.modulo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.modulo-card {
+    display: block;
+    text-decoration: none;
+    background-color: var(--color-blancohueso); 
+    border: 1px solid rgba(40, 54, 24, 0.1); 
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.modulo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--color-terracota);
+}
+
+.modulo-card h3 { color: var(--color-verdebosque); margin-bottom: 10px; }
+.modulo-card p { color: var(--color-verdemilitar); font-size: 1rem; }
+
+/* Estilos de las Tablas de Datos (Inventario, Clientes, Reportes) */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.data-table th, .data-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    color: var(--color-verdebosque);
+}
+
+.data-table th {
+    background-color: var(--color-verdemilitar);
+    color: white;
+    font-weight: bold;
+}
+
+/* Estilo para Stock Bajo */
+.stock-low {
+    background-color: #fdd; /* Rojo claro para alerta */
+    font-weight: bold;
+    color: #c0392b !important; 
+}
+
+/* Estilos para Formularios (producto_form.php, contacto_form.php) */
+.form-card {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.form-card label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--color-verdebosque);
+}
+
+.form-card input[type="text"], 
+.form-card input[type="number"], 
+.form-card input[type="email"], 
+.form-card input[type="tel"],
+.form-card textarea,
+.form-card select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Estilos para Mensajes de Sesión */
+.alert-success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: 10px; margin-bottom: 15px; }
+.alert-danger { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; padding: 10px; margin-bottom: 15px; }
+
+/* === 7. FOOTER === */
+footer {
+    background-color: var(--color-terracota);
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+}
+
+footer p {
+    color: var(--color-verdebosque);
+    margin: 0;
+    padding: 0;
+}
+
+footer a {
+    color: var(--color-verdebosque);
+    text-decoration: underline;
+}
+
+
+/* === 8. RESPONSIVIDAD GENERAL === */
+@media (max-width: 768px) {
+    .modulo-grid {
+        grid-template-columns: 1fr; /* Una sola columna en móviles */
+    }
     .titulo1, .titulo2 {
-        font-size: 10vw; 
-        text-align: center;
-        margin-right: 0;
-        align-self: center;
+        font-size: 8vw;
     }
-    
-    nav {
-        display: none; 
+    header {
+        flex-direction: column;
+        height: auto;
     }
-    
-    .logo {
-        width: 100%;
-        text-align: center;
-        display: flex;
-        justify-content: center;
+    nav ul {
+        margin-top: 10px;
+    }
+    .data-table, .form-card {
+        padding: 10px;
+    }
 }
