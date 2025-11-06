@@ -9,9 +9,6 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-// Opcional: Si necesitas la conexión PDO para mostrar estadísticas rápidas aquí.
-// require 'db_connect.php'; 
-
 // La variable $_SESSION['user_name'] contiene el nombre del usuario logueado.
 $user_name = $_SESSION['user_name'] ?? 'Usuario'; 
 ?>
@@ -23,11 +20,30 @@ $user_name = $_SESSION['user_name'] ?? 'Usuario';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agropecuaria - Dashboard</title>
-    <link rel="stylesheet" href="CSS/styleisa.css">
-    <link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1Oc3K0QRVUrfh7K_Rlxqo4Y9zv5aV7g1D&sz=w800">
+    <link rel="stylesheet" href="styleisa.css"> <link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1Oc3K0QRVUrfh7K_Rlxqo4Y9zv5aV7g1D&sz=w800">
 </head>
 
 <body>
+<header>
+    <div class="logo">
+        <a href="dashboard.php">
+            <img src="URL_DEL_LOGO" alt="Logo Agropecuaria"> 
+        </a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="inventario.php">Inventario</a></li>
+            <li><a href="ventas_pos.php">POS</a></li>
+            <li><a href="reportes.php">Reportes</a></li>
+            
+            <li>
+                <a href="logout.php" class="btn-login" style="background-color: var(--color-verdebosque);">
+                    Cerrar Sesión
+                </a>
+            </li>
+            </ul>
+    </nav>
+</header>
 <main class="dashboard-content">
     <h1>¡Bienvenido/a, <?php echo htmlspecialchars($user_name); ?>!</h1>
     <p>Selecciona una opción para comenzar a trabajar:</p>
@@ -54,9 +70,11 @@ $user_name = $_SESSION['user_name'] ?? 'Usuario';
         </a>
     </div>
 </main>
-    <footer>
-        <p>© 2025 Agropecuaria. Todos los derechos reservados. | <a href="contacto.html">Contacto</a></p>
-    </footer>
-    <script src="js/main.js"></script>
+
+<footer>
+    <p>© 2025 Agropecuaria. Todos los derechos reservados. | <a href="contacto.html">Contacto</a></p>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>
