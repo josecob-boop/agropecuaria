@@ -25,7 +25,7 @@ unset($_SESSION['success_message'], $_SESSION['error_message']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventario - Agropecuaria</title>
-    <link rel="stylesheet" href="styleisa.css">
+    <link rel="stylesheet" href="CSS/styleisa.css">
     <link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1Oc3K0QRVUrfh7K_Rlxqo4Y9zv5aV7g1D&sz=w800">
 </head>
 
