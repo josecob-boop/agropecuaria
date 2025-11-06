@@ -85,12 +85,19 @@ try {
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Módulo de Reportes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo de Reportes - Agropecuaria</title>
+    <link rel="stylesheet" href="CSS/styleisa.css">
+    <link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1Oc3K0QRVUrfh7K_Rlxqo4Y9zv5aV7g1D&sz=w800">
 </head>
 <body>
+    <!-- 🟢 Aquí iría tu Header de navegación (con el botón de Cerrar Sesión) -->
+
     <main class="dashboard-content">
         <h1>📈 Módulo de Reportes</h1>
         
+        <!-- Menú de Selección de Reporte -->
         <nav class="report-menu">
             <a href="reportes.php?r=stock" class="btn-report <?php echo ($reporte_actual === 'stock') ? 'active' : ''; ?>">Stock Actual</a>
             <a href="reportes.php?r=vendidos" class="btn-report <?php echo ($reporte_actual === 'vendidos') ? 'active' : ''; ?>">Más Vendidos</a>
@@ -113,7 +120,7 @@ try {
                             // Generar cabeceras basadas en las claves del primer registro
                             $keys = array_keys($datos_reporte[0]);
                             foreach ($keys as $key) {
-                                // Simple formateo de nombres de columna
+                                // Simple formateo de nombres de columna (ej. "total_vendido" -> "Total Vendido")
                                 echo "<th>" . htmlspecialchars(ucwords(str_replace('_', ' ', $key))) . "</th>";
                             }
                         ?>
@@ -135,5 +142,9 @@ try {
             <?php endif; ?>
         </section>
     </main>
-    </body>
+    
+    <!-- 🟢 Aquí iría tu Footer -->
+    
+    <script src="js/main.js"></script>
+</body>
 </html>
