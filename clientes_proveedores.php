@@ -3,7 +3,7 @@
 session_start();
 require 'db_connect.php'; 
 
-// Control de acceso
+// 1. CONTROL DE ACCESO
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.html");
     exit;
@@ -14,6 +14,7 @@ try {
     $stmt_clientes = $pdo->query("SELECT id, nombre, apellido, telefono, email FROM clientes ORDER BY nombre ASC");
     $clientes = $stmt_clientes->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
+    // Manejo de errores
     $error_clientes = "Error al cargar clientes: " . $e->getMessage();
     $clientes = [];
 }
@@ -23,6 +24,7 @@ try {
     $stmt_prov = $pdo->query("SELECT id, nombre, contacto, telefono, email FROM proveedores ORDER BY nombre ASC");
     $proveedores = $stmt_prov->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
+    // Manejo de errores
     $error_proveedores = "Error al cargar proveedores: " . $e->getMessage();
     $proveedores = [];
 }
@@ -36,14 +38,18 @@ unset($_SESSION['success_message'], $_SESSION['error_message']);
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Clientes y Proveedores</title>
+    <link rel="stylesheet" href="styleisa.css">
+    <link rel="icon" type="image/png" href="URL_DEL_FAVICON">
 </head>
 <body>
     <main class="dashboard-content">
         <h1>👥 Gestión de Contactos</h1>
         
         <?php if (!empty($message)): ?>
-            <p class="<?php echo isset($_SESSION['success_message']) ? 'success-message' : 'error-message'; ?>">
+            <p class="<?php echo isset($_SESSION['success_message']) ? 'alert-success' : 'alert-danger'; ?>">
                 <?php echo htmlspecialchars($message); ?>
             </p>
         <?php endif; ?>
@@ -128,5 +134,7 @@ unset($_SESSION['success_message'], $_SESSION['error_message']);
             <?php endif; ?>
         </section>
     </main>
-    </body>
+    
+    <script src="js/main.js"></script>
+</body>
 </html>
