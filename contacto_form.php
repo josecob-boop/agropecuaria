@@ -12,7 +12,6 @@ if (!isset($_SESSION['user_id'])) {
 // 2. OBTENER TIPO DE CONTACTO (Obligatorio)
 $type = $_GET['type'] ?? null;
 if (!in_array($type, ['cliente', 'proveedor'])) {
-    // Si no se especifica el tipo, redirigir al listado
     header("Location: clientes_proveedores.php");
     exit;
 }
@@ -26,11 +25,11 @@ $title = $is_cliente ? 'Cliente' : 'Proveedor';
 $contacto_actual = [
     'id' => '',
     'nombre' => '',
-    'apellido' => '', // Solo para clientes
+    'apellido' => '', 
     'telefono' => '',
     'email' => '',
-    'direccion' => '', // Solo para clientes
-    'contacto' => ''   // Solo para proveedores (contacto principal)
+    'direccion' => '', 
+    'contacto' => ''   
 ];
 $form_action = 'create';
 
@@ -46,7 +45,7 @@ if (isset($_GET['id'])) {
             $contacto = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($contacto) {
-                $contacto_actual = array_merge($contacto_actual, $contacto); // Sobrescribe valores
+                $contacto_actual = array_merge($contacto_actual, $contacto);
                 $form_action = 'update';
             } else {
                 header("Location: clientes_proveedores.php");
@@ -62,7 +61,11 @@ if (isset($_GET['id'])) {
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de <?php echo $title; ?></title>
+    <link rel="stylesheet" href="CSS/styleisa.css">
+    <link rel="icon" type="image/png" href="URL_DEL_FAVICON">
 </head>
 <body>
     <main class="dashboard-content">
