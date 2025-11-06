@@ -26,7 +26,6 @@ try {
     $stmt_prov = $pdo->query("SELECT id, nombre FROM proveedores ORDER BY nombre ASC");
     $proveedores = $stmt_prov->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
-    // Manejo de error de proveedores
     $error_message = "Error al cargar proveedores.";
 }
 
@@ -48,7 +47,7 @@ if (isset($_GET['id'])) {
                 $form_action = 'update';
             } else {
                 // Si el ID no existe
-                header("Location: inventario.html");
+                header("Location: inventario.php"); // 🟢 AJUSTE DE RUTA: inventario.php
                 exit;
             }
         } catch (PDOException $e) {
@@ -61,7 +60,11 @@ if (isset($_GET['id'])) {
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Producto</title>
+    <link rel="stylesheet" href="styleisa.css"> 
+    <link rel="icon" type="image/png" href="URL_DEL_FAVICON">
 </head>
 <body>
     <main class="dashboard-content">
@@ -104,8 +107,7 @@ if (isset($_GET['id'])) {
                 </select>
                 
                 <button type="submit" class="btn-primary-lg">Guardar Producto</button>
-                <a href="inventario.html" class="btn-secondary">Cancelar</a>
-            </form>
+                <a href="inventario.php" class="btn-secondary">Cancelar</a> </form>
         </section>
     </main>
 
