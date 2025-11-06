@@ -1,1 +1,116 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+:root {
+    --color-verdemilitar: #606c38;
+    --color-verdebosque: #283618;
+    --color-blancohueso: #fefae0;
+    --color-doradosuave: #dda15e;
+    --color-terracota: #bc6c25;
+}
+
+/* === 1. LAYOUT PRINCIPAL DEL DASHBOARD === */
+.dashboard-content {
+    /* Usamos el fondo blanco hueso para que resalte el contenido */
+    background-color: var(--color-blancohueso);
+    color: var(--color-verdebosque);
+    padding: 40px 20px;
+    min-height: 85vh; /* Asegura que la página sea visualmente larga */
+    max-width: 1200px;
+    margin: 0 auto; /* Centrar el contenido del dashboard */
+}
+
+.dashboard-content h1 {
+    color: var(--color-verdebosque);
+    margin-bottom: 5px;
+    font-size: 2.5rem;
+}
+
+.dashboard-content p {
+    color: var(--color-verdemilitar);
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+}
+
+/* === 2. CUADRÍCULA DE MÓDULOS (NAV) === */
+.modulo-grid {
+    display: grid;
+    /* Crear una cuadrícula de 4 columnas en escritorios */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px; /* Espacio entre las tarjetas */
+    margin-top: 40px;
+}
+
+.modulo-card {
+    /* Estilo de la tarjeta del módulo */
+    display: block;
+    text-decoration: none;
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto Hover */
+.modulo-card:hover {
+    transform: translateY(-5px); /* Levanta la tarjeta ligeramente */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--color-terracota);
+}
+
+.modulo-card h3 {
+    color: var(--color-verdebosque);
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+}
+
+.modulo-card p {
+    /* Texto de descripción más pequeño */
+    color: var(--color-verdemilitar);
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* Iconos (Ej. 📦 💰 👥 📈) */
+.modulo-card h3::before {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Estilos para el texto de bienvenida personalizado (si aplica) */
+.dashboard-content h1 .user-name {
+    color: var(--color-terracota);
+}
+
+        footer {
+            /* 🟢 SOLUCIÓN 1: El fondo Terracota Ocupa TODO el ancho */
+            background-color: var(--color-terracota); 
+            
+            /* 🟢 SOLUCIÓN 2: Corrección de sintaxis y centrado del contenido */
+            text-align: center; 
+            padding: 15px 0; /* Espacio interno */
+            width: 100%; /* Aseguramos el 100% */
+        }
+        
+        .centered-footer-text {
+            color: var(--color-verdebosque); /* Cambiamos el color a uno que contraste con terracota */
+            margin: 0 auto; /* Ayuda a centrar si el texto fuera un bloque */
+            width: auto;
+            max-width: 1200px;
+        }
+        
+        footer a {
+            color: var(--color-verdebosque);
+        }
+
+/* === 3. RESPONSIVIDAD BÁSICA === */
+@media (max-width: 768px) {
+    .modulo-grid {
+        /* En tabletas y móviles, las tarjetas se apilan en 2 columnas */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
